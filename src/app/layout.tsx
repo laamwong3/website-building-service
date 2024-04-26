@@ -33,7 +33,7 @@ export default function RootLayout({
               className="h-full w-full object-cover object-center opacity-10"
             />
           </div>
-          <main className="container mx-auto max-w-screen-2xl px-6 pt-[64px]">
+          <main className="container mx-auto max-w-screen-2xl px-6">
             {children}
             <Footer />
           </main>
