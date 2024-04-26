@@ -1,7 +1,7 @@
 import About from "@/components/Home/About";
 import Contact from "@/components/Home/Contact";
 import Cta from "@/components/Home/Cta";
-import Faq from "@/components/Home/FAQ";
+import Faq from "@/components/Home/Faq";
 import Feature from "@/components/Home/Feature";
 import FeatureList from "@/components/Home/FeatureList";
 import Hero from "@/components/Home/Hero";
@@ -16,7 +16,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <main>
+    <>
       <Hero />
       <Problem />
       <Solution />
@@ -31,7 +31,7 @@ const page = () => {
       <Cta />
       <Faq />
       <Contact />
-    </main>
+    </>
   );
 };
 

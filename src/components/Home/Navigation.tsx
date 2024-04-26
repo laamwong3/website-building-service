@@ -1,7 +1,7 @@
 import React from "react";
 
 const Navigation = () => {
-  return <div>Navigation</div>;
+  return <div>lorem100</div>;
 };
 
 export default Navigation;

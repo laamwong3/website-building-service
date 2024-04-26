@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inconsolata } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Home/Navigation";
 import Footer from "@/components/Home/Footer";
+import { Providers as NextUIProvider } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inconsolata = Inconsolata({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navigation />
-        {children}
-        <Footer />
+    <html lang="en" className="dark">
+      <body className={`${inconsolata.className}`}>
+        <NextUIProvider>
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+        </NextUIProvider>
       </body>
     </html>
   );
