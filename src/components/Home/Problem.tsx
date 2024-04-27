@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Ban } from "lucide-react";
-import { Spacer } from "@nextui-org/spacer";
+import SectionSplit from "./SectionSplit";
 
 interface FeatureItemProps {
   text: string;
@@ -37,14 +37,14 @@ function Problem() {
   return (
     <>
       <section className="flex flex-col justify-center md:px-16">
-        <div className="max-md:mr-1 max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+        <div className="max-md:max-w-full">
+          <div className="flex flex-col items-center justify-center gap-5 max-md:gap-0">
             <div className="flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
               <h2 className="self-stretch text-2xl font-bold leading-10 max-md:mt-10 max-md:max-w-full md:text-4xl">
                 Have you frustrated with the high cost of staying offline?
               </h2>
             </div>
-            <div className="ml-5 flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
+            <div className="flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
               <div className="flex grow flex-col text-base leading-6 max-md:mt-10 max-md:max-w-full">
                 <p className="text-lg font-extrabold leading-7 text-neutral-400 max-md:max-w-full">
                   Unveiling the real consequences of not having a business
@@ -58,7 +58,7 @@ function Problem() {
           </div>
         </div>
       </section>
-      <Spacer y={10} />
+      <SectionSplit />
     </>
   );
 }
