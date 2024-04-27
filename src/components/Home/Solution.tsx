@@ -15,7 +15,7 @@ const CheckmarkItem: React.FC<CheckmarkItemProps> = ({ children }) => (
   </div>
 );
 
-const Solution: React.FC = () => {
+const Solution = () => {
   const checkmarkItems = [
     {
       text: "Stand out from the crowd with a unique design",
@@ -32,7 +32,7 @@ const Solution: React.FC = () => {
     <>
       <section className="flex flex-col justify-center px-0 md:px-16">
         <div className="max-md:mr-1 max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+          <div className="flex flex-col-reverse gap-5 max-md:gap-0 md:flex-row">
             <div className="flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
               <div className="my-auto flex flex-col self-stretch text-base leading-6 max-md:mt-10 max-md:max-w-full">
                 <div className="font-semibold text-secondary max-md:max-w-full">
@@ -42,10 +42,9 @@ const Solution: React.FC = () => {
                   Unlock Your Business Potential with a Professional Website
                 </h2>
                 <p className="mt-6 text-lg font-extrabold leading-7 text-neutral-400 max-md:max-w-full">
-                  A professional website can transform your business by
-                  attracting customers, enhancing brand visibility, and boosting
-                  sales. Our manual website building service ensures a standout
-                  online presence
+                  Our professional website service attracts customers, enhances
+                  visibility, and boosts sales, ensuring a standout online
+                  presence
                 </p>
                 {checkmarkItems.map(({ text }, index) => (
                   <CheckmarkItem key={index}>{text}</CheckmarkItem>
