@@ -8,9 +8,8 @@ const Hero = () => {
         Own Your Beautiful Websites with Ease
       </h1>
       <p className="mt-6 w-[768px] text-center text-lg leading-7 text-neutral-400 max-md:max-w-full">
-        The service offers website building service that is user-friendly and
-        highly customizable, allowing users to have unique, standout websites
-        that accurately reflect their brand and vision.
+        Our service provides user-friendly, customizable website building for
+        unique, standout sites that reflect your brand and vision
       </p>
       <div className="mt-6 flex items-start gap-4 whitespace-nowrap pt-4 text-base leading-6">
         <Button
