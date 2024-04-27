@@ -36,7 +36,7 @@ const featureItems: FeatureItemProps[] = [
 function Problem() {
   return (
     <>
-      <section className="flex flex-col justify-center md:px-16">
+      <section className="flex flex-col justify-center rounded-md bg-background bg-opacity-50 bg-clip-padding py-16 backdrop-blur-xl backdrop-filter md:px-16">
         <div className="max-md:max-w-full">
           <div className="flex flex-col items-center justify-center gap-5 max-md:gap-0">
             <div className="flex w-6/12 flex-col max-md:ml-0 max-md:w-full">

@@ -30,7 +30,7 @@ export default function RootLayout({
             <Image
               src={background}
               alt="background"
-              className="h-full w-full object-cover object-center opacity-10"
+              className="h-full w-full object-cover object-center opacity-20"
             />
           </div>
           <main className="container mx-auto max-w-screen-2xl px-6 pt-[64px]">

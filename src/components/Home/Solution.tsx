@@ -45,7 +45,7 @@ const Solution: React.FC = () => {
                   A professional website can transform your business by
                   attracting customers, enhancing brand visibility, and boosting
                   sales. Our manual website building service ensures a standout
-                  online presence.
+                  online presence
                 </p>
                 {checkmarkItems.map(({ text }, index) => (
                   <CheckmarkItem key={index}>{text}</CheckmarkItem>
