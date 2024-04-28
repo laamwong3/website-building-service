@@ -1,52 +1,36 @@
 import * as React from "react";
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
+import { Button } from "@nextui-org/button";
+import designSprint from "@/assets/images/designSprint.svg";
+import responsive from "@/assets/images/responsive.svg";
+import search from "@/assets/images/search.svg";
 
-interface MyComponentProps {
-  tagline?: string;
-  heading?: string;
-  description?: string;
-  sections?: Array<{
-    imageSrc: string;
-    heading: string;
-    description: string;
-  }>;
-  primaryButtonText?: string;
-  secondaryButtonText?: string;
-  secondaryButtonIconSrc?: string;
-}
-
-function Service({
-  tagline,
-  heading,
-  description,
-  sections,
-  primaryButtonText,
-  secondaryButtonText,
-  secondaryButtonIconSrc,
-}: MyComponentProps) {
+function Service() {
   return (
-    <div className="flex flex-col items-center bg-white px-16 py-20 max-md:px-5">
-      <div className="mt-8 text-center text-base font-semibold leading-6 text-black">
-        {tagline}
+    <div className="-mx-6 flex flex-col items-center justify-center rounded-md bg-background bg-opacity-10 bg-clip-padding px-6 py-16 backdrop-blur-xl backdrop-filter md:mx-0 md:px-16">
+      <div className="mt-8 text-center text-base font-semibold leading-6">
+        service
       </div>
-      <div className="mt-4 w-[768px] text-center text-5xl font-bold leading-[58px] text-black max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
-        {heading}
+      <div className="mt-4 w-[768px] text-center text-5xl font-bold leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+        Custom Website Design and SEO Optimization Services
       </div>
-      <div className="mt-6 w-[768px] text-center text-lg leading-7 text-black max-md:max-w-full">
-        {description}
+      <div className="mt-6 w-[768px] text-center text-lg leading-7 max-md:max-w-full">
+        Our services include custom design, responsive layouts, and SEO
+        optimization to help your website stand out and attract more visitors.
       </div>
       <div className="mt-20 justify-center self-stretch max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {sections?.map((section, index) => (
+          {features.map((feature, index) => (
             <div
               key={index}
               className={`flex w-[33%] flex-col max-md:ml-0 max-md:w-full ${
                 index > 0 ? "ml-5" : ""
               }`}
             >
-              <div className="flex grow flex-col text-center text-black max-md:mt-10">
+              <div className="flex grow flex-col text-center max-md:mt-10">
                 <Image
-                  src={section.imageSrc}
+                  src={feature.imageSrc}
                   alt=""
                   width={0}
                   height={0}
@@ -54,33 +38,47 @@ function Service({
                   className="aspect-[1.69] w-full"
                 />
                 <div className="mt-8 text-3xl font-bold leading-10">
-                  {section.heading}
+                  {feature.heading}
                 </div>
                 <div className="mt-6 text-base leading-6">
-                  {section.description}
+                  {feature.description}
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="mt-12 flex items-start justify-between gap-5 whitespace-nowrap pt-4 text-base leading-6 text-black max-md:mt-10">
-        <div className="justify-center border border-solid border-black px-6 py-3 max-md:px-5">
-          {primaryButtonText}
-        </div>
-        <div className="mt-3 flex justify-center gap-2">
-          <div>{secondaryButtonText}</div>
-          <Image
-            src={""}
-            alt=""
-            width={24}
-            height={24}
-            className="aspect-square w-6 shrink-0"
-          />
-        </div>
+      <div className="mt-12 flex items-center justify-between gap-5 whitespace-nowrap pt-4 text-base leading-6 max-md:mt-10">
+        <Button variant="shadow" color="primary">
+          Contact Us
+        </Button>
+        <Button variant="light" color="primary" endContent={<ChevronRight />}>
+          Pricing
+        </Button>
       </div>
     </div>
   );
 }
 
 export default Service;
+
+const features = [
+  {
+    heading: "Website Development",
+    description:
+      "We create unique and visually appealing designs tailored to your brand.",
+    imageSrc: designSprint,
+  },
+  {
+    heading: "Responsive Layouts",
+    description:
+      "We ensure your website looks great on all devices and screen sizes.",
+    imageSrc: responsive,
+  },
+  {
+    heading: "SEO Optimization",
+    description:
+      "We optimize your website to improve its visibility in search engine results.",
+    imageSrc: search,
+  },
+];
