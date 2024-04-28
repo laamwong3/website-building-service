@@ -9,13 +9,13 @@ import search from "@/assets/images/search.svg";
 function Service() {
   return (
     <div className="-mx-6 flex flex-col items-center justify-center rounded-md bg-background bg-opacity-10 bg-clip-padding px-6 py-16 backdrop-blur-xl backdrop-filter md:mx-0 md:px-16">
-      <div className="mt-8 text-center text-base font-semibold leading-6">
-        service
+      <div className="text-center text-base font-semibold leading-6 text-secondary">
+        Our service
       </div>
-      <div className="mt-4 w-[768px] text-center text-5xl font-bold leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+      <div className="mt-4 w-[768px] text-center text-2xl font-bold leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px] md:text-4xl">
         Custom Website Design and SEO Optimization Services
       </div>
-      <div className="mt-6 w-[768px] text-center text-lg leading-7 max-md:max-w-full">
+      <div className="mt-6 w-[768px] text-center text-lg leading-7 text-neutral-400 max-md:max-w-full">
         Our services include custom design, responsive layouts, and SEO
         optimization to help your website stand out and attract more visitors.
       </div>
