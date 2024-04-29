@@ -14,7 +14,7 @@ function Service() {
         <div className="text-center text-base font-semibold leading-6 text-secondary">
           Our service
         </div>
-        <div className="mt-4 w-[768px] text-center text-2xl font-bold leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px] md:text-4xl">
+        <div className="mt-4 w-[768px] text-center text-2xl font-bold leading-[58px] max-md:max-w-full max-md:leading-[54px] md:text-4xl">
           Custom Website Design and SEO Optimization Services
         </div>
         <div className="mt-6 w-[768px] text-center text-lg leading-7 text-neutral-400 max-md:max-w-full">
@@ -39,7 +39,7 @@ function Service() {
                     sizes="100vw"
                     className="aspect-[1.69] w-full"
                   />
-                  <div className="mt-8 text-3xl font-bold leading-10">
+                  <div className="mt-8 text-2xl font-bold leading-10">
                     {feature.heading}
                   </div>
                   <div className="mt-6 text-base font-extralight leading-6">

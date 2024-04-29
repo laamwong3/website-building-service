@@ -20,16 +20,13 @@ const Plan: React.FC<{
   features: IFeature[];
 }> = ({ planName, monthlyPrice, yearlyPrice, features }) => (
   <div className="flex w-full flex-col md:ml-0 md:w-[33%] lg:w-full">
-    <div className="flex grow flex-col justify-between self-stretch border border-solid border-black p-8 text-base text-black md:mt-8 md:px-5">
+    <div className="flex grow flex-col justify-between self-stretch border border-solid border-foreground p-8 text-base md:mt-8 md:px-5">
       <div>
         <div className="flex flex-col items-center px-20 text-center text-xl font-bold md:px-5">
           <div className="leading-[140%]">{planName}</div>
           <div className="mt-2 leading-7">
-            <span className="text-6xl leading-[67px] text-black">
-              {" "}
-              ${monthlyPrice}{" "}
-            </span>
-            <span className="text-3xl leading-10 text-black">/mo</span>
+            <span className="text-6xl leading-[67px]"> ${monthlyPrice} </span>
+            <span className="text-3xl leading-10">/mo</span>
           </div>
           <div className="mt-2 text-base leading-6">
             or ${yearlyPrice} yearly
@@ -44,7 +41,7 @@ const Plan: React.FC<{
           />
         ))}
       </div>
-      <div className="mt-32 items-center justify-center border border-solid border-black bg-black px-6 py-3 leading-[150%] text-white md:mt-10 md:px-5">
+      <div className="mt-32 items-center justify-center border border-solid border-black px-6 py-3 leading-[150%] md:mt-10 md:px-5">
         Get started
       </div>
     </div>
@@ -52,21 +49,18 @@ const Plan: React.FC<{
 );
 
 const Pricing = () => (
-  <section className="flex flex-col items-center bg-white px-16 py-20 md:px-5">
-    <div className="mt-8 text-center text-base font-semibold leading-6 text-black md:max-w-full">
-      Tagline
-    </div>
-    <div className="mt-4 flex w-[768px] max-w-full items-center justify-center px-16 text-center text-black md:px-5">
+  <section className="-mx-6 flex flex-col items-center justify-center rounded-md bg-background bg-opacity-10 bg-clip-padding px-6 py-16 backdrop-blur-xl backdrop-filter md:mx-0 md:px-16">
+    <div className="flex w-[768px] max-w-full items-center justify-center text-center md:px-5">
       <div className="flex flex-col md:max-w-full">
-        <div className="self-center text-5xl font-bold leading-[57.6px] md:text-4xl">
-          Pricing plan
+        <div className="self-center text-2xl font-bold leading-[57.6px] md:text-4xl">
+          Pricing Plan
         </div>
-        <div className="mt-6 text-lg leading-7 md:max-w-full">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+        <div className="mt-6 text-lg leading-7 text-neutral-400 md:max-w-full">
+          Choose the plan that’s right for you
         </div>
       </div>
     </div>
-    <div className="mt-20 self-stretch md:mt-10 md:max-w-full">
+    <div className="mt-16 self-stretch md:mt-10 md:max-w-full">
       <div className="flex flex-col gap-5 md:flex-row ">
         <Plan
           planName="Basic plan"
