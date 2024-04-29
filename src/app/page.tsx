@@ -11,7 +11,7 @@ import ProductList from "@/components/Home/ProductList";
 import Service from "@/components/Home/Service";
 import Solution from "@/components/Home/Solution";
 import Statistics from "@/components/Home/Statistics";
-import Testimonial from "@/components/Home/Testimonial";
+// import Testimonial from "@/components/Home/Testimonial";
 import React from "react";
 
 const page = () => {
@@ -26,7 +26,7 @@ const page = () => {
       <FeatureList /> */}
       <Service />
       <ProductList />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Pricing />
       <Cta />
       <Faq />
