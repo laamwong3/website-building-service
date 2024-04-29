@@ -42,7 +42,7 @@ function Service() {
                   <div className="mt-8 text-3xl font-bold leading-10">
                     {feature.heading}
                   </div>
-                  <div className="mt-6 text-base leading-6">
+                  <div className="mt-6 text-base font-extralight leading-6">
                     {feature.description}
                   </div>
                 </div>
