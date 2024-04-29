@@ -1,6 +1,9 @@
 import * as React from "react";
 import Image from "next/image";
 import SectionSplit from "./SectionSplit";
+import asteroidx from "@/assets/images/asteroidx.svg";
+import nicho from "@/assets/images/nicho.svg";
+import nichoAuction from "@/assets/images/nichoAuction.svg";
 
 interface ProductProps {
   name: string;
@@ -23,7 +26,7 @@ const Product: React.FC<ProductProps> = ({
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={500}
+          // width={500}
           height={500}
           className="aspect-square w-full"
         />
@@ -40,64 +43,21 @@ const products: ProductProps[] = [
     name: "Product name",
     variant: "Variant",
     price: 55,
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/078e86fe88249763fe6909708167bc59e925f12899f6fcbe9eb8b6813de7adb3?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
+    imageSrc: nichoAuction,
     imageAlt: "Product image",
   },
   {
     name: "Product name",
     variant: "Variant",
     price: 55,
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/078e86fe88249763fe6909708167bc59e925f12899f6fcbe9eb8b6813de7adb3?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
+    imageSrc: nicho,
     imageAlt: "Product image",
   },
   {
     name: "Product name",
     variant: "Variant",
     price: 55,
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/078e86fe88249763fe6909708167bc59e925f12899f6fcbe9eb8b6813de7adb3?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
-    imageAlt: "Product image",
-  },
-  {
-    name: "Product name",
-    variant: "Variant",
-    price: 55,
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/078e86fe88249763fe6909708167bc59e925f12899f6fcbe9eb8b6813de7adb3?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
-    imageAlt: "Product image",
-  },
-  {
-    name: "Product name",
-    variant: "Variant",
-    price: 55,
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/078e86fe88249763fe6909708167bc59e925f12899f6fcbe9eb8b6813de7adb3?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
-    imageAlt: "Product image",
-  },
-  {
-    name: "Product name",
-    variant: "Variant",
-    price: 55,
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/078e86fe88249763fe6909708167bc59e925f12899f6fcbe9eb8b6813de7adb3?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
-    imageAlt: "Product image",
-  },
-  {
-    name: "Product name",
-    variant: "Variant",
-    price: 55,
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/078e86fe88249763fe6909708167bc59e925f12899f6fcbe9eb8b6813de7adb3?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
-    imageAlt: "Product image",
-  },
-  {
-    name: "Product name",
-    variant: "Variant",
-    price: 55,
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/078e86fe88249763fe6909708167bc59e925f12899f6fcbe9eb8b6813de7adb3?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
+    imageSrc: asteroidx,
     imageAlt: "Product image",
   },
 ];
@@ -120,7 +80,7 @@ function ProductList() {
           </div>
         </div>
         <div className="mt-16 max-md:mt-10 max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+          <div className="flex justify-center gap-5 max-md:flex-col max-md:gap-0">
             {products.slice(0, 4).map((product, index) => (
               <Product key={index} {...product} />
             ))}
