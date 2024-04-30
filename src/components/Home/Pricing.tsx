@@ -78,6 +78,7 @@ const pricingDetails = [
   {
     name: "Basic Plan",
     price: "$2000",
+    currency: "AUD",
     features: [
       {
         text: "Responsive Design",
@@ -99,6 +100,7 @@ const pricingDetails = [
   {
     name: "Premium Plan",
     price: "$4000",
+    currency: "AUD",
     features: [
       {
         text: "All features of Basic Plan, plus:",
@@ -123,6 +125,7 @@ const pricingDetails = [
   {
     name: "Enterprise plan",
     price: "Let's talk",
+    currency: "",
     features: [
       {
         text: "All features of Premium Website, plus:",
