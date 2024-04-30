@@ -35,7 +35,7 @@ function Cta() {
       <Heading text={headingText} />
       <Paragraph text={paragraphText} />
       <div className="flex items-start gap-4 whitespace-nowrap pt-6 text-base leading-6">
-        <Button color="primary">Contact Us</Button>
+        <Button color="primary">Build Now</Button>
       </div>
     </section>
   );

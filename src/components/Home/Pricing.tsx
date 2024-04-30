@@ -17,8 +17,9 @@ const Feature: React.FC<IFeature> = ({ text }) => (
 const Plan: React.FC<{
   planName: string;
   price: string;
+  currency: string;
   features: IFeature[];
-}> = ({ planName, price, features }) => (
+}> = ({ planName, price, features, currency }) => (
   <div className="flex w-full flex-col md:ml-0 md:w-[33%] lg:w-full">
     <div className="flex grow flex-col justify-between self-stretch rounded-lg border border-solid border-foreground p-8 text-base md:mt-8 md:px-5">
       <div>
@@ -27,7 +28,12 @@ const Plan: React.FC<{
             {planName}
           </div>
           <div className="mt-2 leading-7">
-            <span className="text-6xl leading-[67px]"> {price} </span>
+            <span className="text-6xl leading-[67px]">
+              {price}
+              <span className="text-xl font-extralight text-warning">
+                {currency}
+              </span>
+            </span>
           </div>
         </div>
 
@@ -63,6 +69,7 @@ const Pricing = () => (
               planName={detail.name}
               price={detail.price}
               features={detail.features}
+              currency={detail.currency}
             />
           ))}
         </div>
@@ -128,7 +135,7 @@ const pricingDetails = [
     currency: "",
     features: [
       {
-        text: "All features of Premium Website, plus:",
+        text: "All features of Premium Plan, plus:",
       },
       {
         text: "Custom Development",
