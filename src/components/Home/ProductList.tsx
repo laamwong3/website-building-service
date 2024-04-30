@@ -38,33 +38,6 @@ const Product: React.FC<ProductProps> = ({
   );
 };
 
-const products: ProductProps[] = [
-  {
-    name: "Nicho Auction App",
-    variant:
-      "An nicho auction app enables users to list and bid on items in real-time, offering a convenient and competitive platform for buying and selling a variety of goods",
-    price: 55,
-    imageSrc: nichoAuction,
-    imageAlt: "Product image",
-  },
-  {
-    name: "Nicho App",
-    variant:
-      "An NFT marketplace is a digital platform where users can create, buy, sell, and trade non-fungible tokens (NFTs), which represent unique digital assets such as art, music, and collectibles using blockchain technology",
-    price: 55,
-    imageSrc: nicho,
-    imageAlt: "Product image",
-  },
-  {
-    name: "Asteroid X",
-    variant:
-      "A real-world asset, represents a tangible investment opportunity involving the extraction of valuable minerals or resources from a specific geographical location",
-    price: 55,
-    imageSrc: asteroidx,
-    imageAlt: "Product image",
-  },
-];
-
 function ProductList() {
   return (
     <>
@@ -96,3 +69,30 @@ function ProductList() {
 }
 
 export default ProductList;
+
+const products: ProductProps[] = [
+  {
+    name: "Nicho Auction App",
+    variant:
+      "An nicho auction app enables users to list and bid on items in real-time, offering a convenient and competitive platform for buying and selling a variety of goods",
+    price: 55,
+    imageSrc: nichoAuction,
+    imageAlt: "Product image",
+  },
+  {
+    name: "Nicho App",
+    variant:
+      "An NFT marketplace is a digital platform where users can create, buy, sell, and trade non-fungible tokens (NFTs), which represent unique digital assets such as art, music, and collectibles using blockchain technology",
+    price: 55,
+    imageSrc: nicho,
+    imageAlt: "Product image",
+  },
+  {
+    name: "Asteroid X",
+    variant:
+      "A real-world asset, represents a tangible investment opportunity involving the extraction of valuable minerals or resources from a specific geographical location",
+    price: 55,
+    imageSrc: asteroidx,
+    imageAlt: "Product image",
+  },
+];
