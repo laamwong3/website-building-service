@@ -30,7 +30,7 @@ const Solution = () => {
 
   return (
     <>
-      <section className="flex flex-col justify-center px-0 md:px-16">
+      <section className="flex flex-col justify-center py-16 md:px-16">
         <div className="max-md:mr-1 max-md:max-w-full">
           <div className="flex flex-col-reverse gap-5 max-md:gap-0 md:flex-row">
             <div className="flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
@@ -57,7 +57,7 @@ const Solution = () => {
                 alt="website building"
                 width={1920}
                 height={2000}
-                className="aspect-[0.96] w-full grow max-md:mt-10 max-md:max-w-full"
+                className="aspect-[0.96] w-full grow max-md:max-w-full"
               />
             </div>
           </div>

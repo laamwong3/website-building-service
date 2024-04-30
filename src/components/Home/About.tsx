@@ -15,7 +15,7 @@ function About() {
                 alt="business plan"
                 width={500}
                 height={500}
-                className="aspect-[0.96] w-full grow max-md:mt-10 max-md:max-w-full"
+                className="aspect-[0.96] w-full grow max-md:max-w-full"
               />
             </div>
             <div className="ml-5 flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
