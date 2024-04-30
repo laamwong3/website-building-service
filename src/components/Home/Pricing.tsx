@@ -1,13 +1,15 @@
 import * as React from "react";
 import SectionSplit from "./SectionSplit";
+import { CircleCheckBig } from "lucide-react";
+import { Button } from "@nextui-org/button";
 
 interface IFeature {
   text: string;
 }
 
 const Feature: React.FC<IFeature> = ({ text }) => (
-  <div className="mt-4 flex gap-4 leading-[150%]">
-    {/* <Image src={imageURL} alt="" width={24} height={24} className="shrink-0" /> */}
+  <div className="mt-4 flex items-center gap-4 leading-[150%]">
+    <CircleCheckBig width={16} height={16} color="green" />
     <div>{text}</div>
   </div>
 );
@@ -18,27 +20,24 @@ const Plan: React.FC<{
   features: IFeature[];
 }> = ({ planName, price, features }) => (
   <div className="flex w-full flex-col md:ml-0 md:w-[33%] lg:w-full">
-    <div className="flex grow flex-col justify-between self-stretch border border-solid border-foreground p-8 text-base md:mt-8 md:px-5">
+    <div className="flex grow flex-col justify-between self-stretch rounded-lg border border-solid border-foreground p-8 text-base md:mt-8 md:px-5">
       <div>
-        <div className="flex flex-col items-center px-20 text-center text-xl font-bold md:px-5">
-          <div className="leading-[140%]">{planName}</div>
+        <div className="flex flex-col items-center text-center text-xl font-bold">
+          <div className="uppercase leading-[140%] text-primary">
+            {planName}
+          </div>
           <div className="mt-2 leading-7">
-            {/* <span className="text-6xl leading-[67px]"> ${monthlyPrice} </span> */}
-            <span className="text-3xl leading-10">/mo</span>
+            <span className="text-6xl leading-[67px]"> {price} </span>
           </div>
         </div>
 
         {features.map((feature: IFeature, index: number) => (
-          <Feature
-            key={index}
-            // imageURL={feature.imageURL}
-            text={feature.text}
-          />
+          <Feature key={index} text={feature.text} />
         ))}
       </div>
-      <div className="mt-32 items-center justify-center border border-solid border-black px-6 py-3 leading-[150%] md:mt-10 md:px-5">
-        Get started
-      </div>
+      <Button className="mt-8" color="primary">
+        Get Started
+      </Button>
     </div>
   </div>
 );
@@ -52,7 +51,7 @@ const Pricing = () => (
             Pricing Plan
           </div>
           <div className="mt-6 text-lg leading-7 text-neutral-400 md:max-w-full">
-            Choose the plan that’s suitable for you
+            Choose the plan that’s suitable for your business
           </div>
         </div>
       </div>
@@ -63,20 +62,7 @@ const Pricing = () => (
               key={index}
               planName={detail.name}
               price={detail.price}
-              features={[
-                {
-                  // imageURL: "/path/to/feature1.png",
-                  text: "Feature text goes here",
-                },
-                {
-                  // imageURL: "/path/to/feature2.png",
-                  text: "Feature text goes here",
-                },
-                {
-                  // imageURL: "/path/to/feature3.png",
-                  text: "Feature text goes here",
-                },
-              ]}
+              features={detail.features}
             />
           ))}
         </div>
@@ -91,31 +77,46 @@ export default Pricing;
 const pricingDetails = [
   {
     name: "Basic Plan",
-    price: "2000",
+    price: "$2000",
     features: [
       {
-        text: "Feature text goes here",
+        text: "Responsive Design",
       },
       {
-        text: "Feature text goes here",
+        text: "SEO Basics",
       },
       {
-        text: "Feature text goes here",
+        text: "Social Media Integration",
+      },
+      {
+        text: "Standard Security Features",
+      },
+      {
+        text: "Standard Layout",
       },
     ],
   },
   {
     name: "Premium Plan",
-    price: "4000",
+    price: "$4000",
     features: [
       {
-        text: "Feature text goes here",
+        text: "All features of Basic Plan, plus:",
       },
       {
-        text: "Feature text goes here",
+        text: "Customizable Layout",
       },
       {
-        text: "Feature text goes here",
+        text: "Custom Graphics",
+      },
+      {
+        text: "Enhanced SEO Features",
+      },
+      {
+        text: "Interactive Elements",
+      },
+      {
+        text: "Premium Templates",
       },
     ],
   },
@@ -124,13 +125,25 @@ const pricingDetails = [
     price: "Let's talk",
     features: [
       {
-        text: "Feature text goes here",
+        text: "All features of Premium Website, plus:",
       },
       {
-        text: "Feature text goes here",
+        text: "Custom Development",
       },
       {
-        text: "Feature text goes here",
+        text: "Advanced E-commerce Capabilities",
+      },
+      {
+        text: "User Login and Management Systems",
+      },
+      {
+        text: "API Integrations",
+      },
+      {
+        text: "Ongoing Maintenance and Support",
+      },
+      {
+        text: "Scalable Architecture",
       },
     ],
   },
