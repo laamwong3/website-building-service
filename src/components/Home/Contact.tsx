@@ -1,60 +1,38 @@
+import { type LucideProps, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import * as React from "react";
 
 interface ContactInfoProps {
-  icon: string;
+  Icon: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
   title: string;
   info: string;
   isLink?: boolean;
 }
 
 const ContactInfo: React.FC<ContactInfoProps> = ({
-  icon,
+  Icon,
   title,
   info,
   isLink = false,
 }) => (
-  <div className="flex gap-4 max-md:flex-wrap">
-    <Image
-      loading="lazy"
-      src={icon}
-      alt=""
-      className="aspect-square w-6 shrink-0 self-start"
-    />
+  <div className="mt-4 flex items-center gap-4 max-md:flex-wrap">
+    <Icon className="aspect-square w-6 shrink-0" color="blue" />
     <div className="flex flex-1 flex-col max-md:max-w-full">
-      <div className="text-xl font-bold leading-7 max-md:max-w-full">
+      <div className="font-extra text-xl font-bold leading-7 max-md:max-w-full">
         {title}
       </div>
-      <div
-        className={`mt-2 text-base leading-6 ${isLink ? "underline" : ""} max-md:max-w-full`}
+      <a
+        className={`text-base leading-6 ${isLink ? "underline" : ""} cursor-pointer font-extralight hover:text-primary-700 max-md:max-w-full`}
       >
         {info}
-      </div>
+      </a>
     </div>
   </div>
 );
 
-const contactData = [
-  {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/65f220b1381a696d0c9e9ab7f5d8e8a4c293fe6d06e9046d29e7db5a4553a648?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
-    title: "Email",
-    info: "hello@relume.io",
-    isLink: true,
-  },
-  {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/774971d0be869cb2138210958bc365489bf88ec2d3b5f500360b15a784b4afdc?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
-    title: "Phone",
-    info: "+1 (555) 000-0000",
-    isLink: true,
-  },
-  {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6d5683984e8dfde32c4801b0fe4534c87f2816433067d6bd7b63415431614bad?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&",
-    title: "Office",
-    info: "123 Sample St, Sydney NSW 2000 AU",
-  },
-];
-
-const Contact: React.FC = () => {
+const Contact = () => {
   return (
     <section className="flex flex-col items-center py-16 max-md:flex-wrap md:px-16 md:py-16">
       <div className="w-full">
@@ -80,7 +58,7 @@ const Contact: React.FC = () => {
       </div>
       <Image
         loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/88c994bbd13be64f86451afb8e6cc71834b4164d832076c0096415bde85bc66d?apiKey=2ed0e0cd3d194791a0d86a908e2022b7&"
+        src=""
         alt="Contact us banner"
         className="mt-20 aspect-[1.89] w-full max-md:mt-10 max-md:max-w-full"
       />
@@ -89,3 +67,24 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+
+const contactData = [
+  {
+    Icon: Mail,
+    title: "Email",
+    info: "Info@web3in.net",
+    isLink: true,
+  },
+  // {
+  //   Icon: Phone,
+  //   title: "Phone",
+  //   info: "+1 (555) 000-0000",
+  //   isLink: true,
+  // },
+  {
+    Icon: MapPin,
+    title: "Office",
+    info: "Unit 3b, 907 Canning Highway,Mount Pleasant, WA 6153",
+    isLink: true,
+  },
+];
