@@ -15,24 +15,6 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ text }) => (
   </div>
 );
 
-const featureItems: FeatureItemProps[] = [
-  {
-    text: "Reduced Customer Base",
-  },
-  {
-    text: "Loss of Competitive Edge",
-  },
-  {
-    text: "Limited Marketing Effectiveness",
-  },
-  {
-    text: "Difficulty in Building Trust",
-  },
-  {
-    text: "Operational Inefficiencies",
-  },
-];
-
 function Problem() {
   return (
     <>
@@ -40,7 +22,7 @@ function Problem() {
         <div className="max-md:max-w-full">
           <div className="flex flex-col items-center justify-center gap-5 max-md:gap-0">
             <div className="flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
-              <h2 className="self-stretch text-2xl font-bold leading-10 max-md:mt-10 max-md:max-w-full md:text-4xl">
+              <h2 className="self-stretch text-2xl font-bold leading-10 max-md:max-w-full md:text-4xl">
                 Have you frustrated with the high cost of staying offline?
               </h2>
             </div>
@@ -64,3 +46,21 @@ function Problem() {
 }
 
 export default Problem;
+
+const featureItems: FeatureItemProps[] = [
+  {
+    text: "Reduced Customer Base",
+  },
+  {
+    text: "Loss of Competitive Edge",
+  },
+  {
+    text: "Limited Marketing Effectiveness",
+  },
+  {
+    text: "Difficulty in Building Trust",
+  },
+  {
+    text: "Operational Inefficiencies",
+  },
+];
