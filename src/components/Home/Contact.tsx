@@ -66,16 +66,17 @@ const Contact = () => {
         alt="Contact us banner"
         className="mt-20 aspect-[1.89] w-full max-md:mt-10 max-md:max-w-full"
       /> */}
-      <div className="max-md:max-w-ful mt-20 aspect-[1.89] w-full bg-background max-md:mt-10">
+      <div className="max-md:max-w-ful mt-20 aspect-[1.89] w-full overflow-hidden rounded-xl bg-background max-md:mt-10">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3383.0745203874108!2d115.84651127522858!3d-32.013095025350324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32a34daa204c8d%3A0x57ee78233ca9c99f!2s3b%2F907%20Canning%20Hwy%2C%20Mount%20Pleasant%20WA%206153!5e0!3m2!1sen!2sau!4v1714602148547!5m2!1sen!2sau"
           width="100%"
           height="100%"
-          style={{ border: 0 }}
+          style={{
+            border: 0,
+            filter: "grayscale(10%) invert(100%)",
+          }}
           allowFullScreen
-          loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="opacity-50"
         ></iframe>
       </div>
     </section>
