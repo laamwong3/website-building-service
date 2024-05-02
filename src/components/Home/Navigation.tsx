@@ -12,29 +12,50 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import web3in from "@/assets/icons/web3in.webp";
+import { useLenis } from "@studio-freight/react-lenis";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const lenis = useLenis();
 
+  const handleLinkClick = (link: string) => {
+    lenis?.scrollTo(link, { offset: -64 });
+    setIsMenuOpen(false);
+  };
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="2xl" isBordered>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
+      maxWidth="2xl"
+      isBordered
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="md:hidden"
         />
         <NavbarBrand>
-          <Image src={web3in} alt="web3in logo" height={50} />
+          <Image
+            src={web3in}
+            alt="web3in logo"
+            height={50}
+            className="cursor-pointer"
+            onClick={() => {
+              handleLinkClick("#hero");
+            }}
+          />
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden gap-4 md:flex" justify="center">
         {menuItems.map((item) => (
           <NavbarItem key={item.id}>
             <Link
-              href={item.link}
               color="foreground"
-              className="text-xl"
+              className="cursor-pointer text-xl"
               underline="hover"
+              onClick={() => {
+                handleLinkClick(item.link);
+              }}
             >
               {item.label}
             </Link>
@@ -43,7 +64,13 @@ export default function Navigation() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="ghost">
+          <Button
+            color="primary"
+            variant="ghost"
+            onClick={() => {
+              handleLinkClick("#contact");
+            }}
+          >
             Get Started
           </Button>
         </NavbarItem>
@@ -52,10 +79,12 @@ export default function Navigation() {
         {menuItems.map((item) => (
           <NavbarItem key={item.id}>
             <Link
-              href={item.link}
               color="foreground"
-              className="text-2xl"
+              className="cursor-pointer text-2xl"
               underline="hover"
+              onClick={() => {
+                handleLinkClick(item.link);
+              }}
             >
               {item.label}
             </Link>
@@ -70,26 +99,26 @@ const menuItems = [
   {
     id: "services",
     label: "Services",
-    link: "#",
+    link: "#service",
   },
   {
     id: "designs",
     label: "Designs",
-    link: "#",
+    link: "#design",
   },
   {
     id: "pricing",
     label: "Pricing",
-    link: "#",
+    link: "#pricing",
   },
   {
     id: "faq",
     label: "FAQ",
-    link: "#",
+    link: "#faq",
   },
   {
     id: "contact",
     label: "Contact Us",
-    link: "#",
+    link: "#contact",
   },
 ];

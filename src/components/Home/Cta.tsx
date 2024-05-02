@@ -1,4 +1,6 @@
+"use client";
 import { Button } from "@nextui-org/button";
+import { useLenis } from "@studio-freight/react-lenis";
 import * as React from "react";
 
 interface HeadingProps {
@@ -30,12 +32,24 @@ function Cta() {
   const paragraphText =
     "Create a stunning website with our website building service.";
 
+  const lenis = useLenis();
+  const handleLinkClick = (link: string) => {
+    lenis?.scrollTo(link, { offset: -64 });
+  };
+
   return (
     <section className="flex flex-col items-center py-16 max-md:flex-wrap md:px-16 md:py-16">
       <Heading text={headingText} />
       <Paragraph text={paragraphText} />
       <div className="flex items-start gap-4 whitespace-nowrap pt-6 text-base leading-6">
-        <Button color="primary">Build Now</Button>
+        <Button
+          color="primary"
+          onClick={() => {
+            handleLinkClick("#contact");
+          }}
+        >
+          Build Now
+        </Button>
       </div>
     </section>
   );

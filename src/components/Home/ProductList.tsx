@@ -41,7 +41,10 @@ const Product: React.FC<ProductProps> = ({
 function ProductList() {
   return (
     <>
-      <section className="flex flex-col items-center py-16 md:px-16">
+      <section
+        id="design"
+        className="flex flex-col items-center py-16 md:px-16"
+      >
         <div className="flex justify-between gap-5 leading-[150%] max-md:max-w-full max-md:flex-wrap">
           <div className="flex flex-col items-center max-md:max-w-full">
             <div className="text-base font-semibold text-secondary max-md:max-w-full">

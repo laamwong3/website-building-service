@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
@@ -6,11 +7,20 @@ import designSprint from "@/assets/images/designSprint.svg";
 import responsive from "@/assets/images/responsive.svg";
 import search from "@/assets/images/search.svg";
 import SectionSplit from "./SectionSplit";
+import { useLenis } from "@studio-freight/react-lenis";
 
 function Service() {
+  const lenis = useLenis();
+  const handleLinkClick = (link: string) => {
+    lenis?.scrollTo(link, { offset: -64 });
+  };
+
   return (
     <>
-      <section className="-mx-6 flex flex-col items-center justify-center rounded-md bg-background bg-opacity-10 bg-clip-padding px-6 py-16 backdrop-blur-xl backdrop-filter md:mx-0 md:px-16">
+      <section
+        id="service"
+        className="-mx-6 flex flex-col items-center justify-center rounded-md bg-background bg-opacity-10 bg-clip-padding px-6 py-16 backdrop-blur-xl backdrop-filter md:mx-0 md:px-16"
+      >
         <div className="text-center text-base font-semibold leading-6 text-secondary">
           Our service
         </div>
@@ -51,10 +61,23 @@ function Service() {
           </div>
         </div>
         <div className="mt-12 flex items-center justify-between gap-5 whitespace-nowrap pt-4 text-base leading-6 max-md:mt-10">
-          <Button variant="shadow" color="primary">
+          <Button
+            variant="shadow"
+            color="primary"
+            onClick={() => {
+              handleLinkClick("#contact");
+            }}
+          >
             Contact Us
           </Button>
-          <Button variant="light" color="primary" endContent={<ChevronRight />}>
+          <Button
+            variant="light"
+            color="primary"
+            endContent={<ChevronRight />}
+            onClick={() => {
+              handleLinkClick("#pricing");
+            }}
+          >
             Pricing
           </Button>
         </div>

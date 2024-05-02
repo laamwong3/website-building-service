@@ -2,10 +2,19 @@
 import * as React from "react";
 import { Button } from "@nextui-org/button";
 import { motion } from "framer-motion";
+import { useLenis } from "@studio-freight/react-lenis";
 
 const Hero = () => {
+  const lenis = useLenis();
+  const handleLinkClick = (link: string) => {
+    lenis?.scrollTo(link, { offset: -64 });
+  };
+
   return (
-    <section className="flex min-h-[calc(100vh-64px)] flex-col items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="flex min-h-[calc(100vh-64px)] flex-col items-center justify-center overflow-hidden"
+    >
       <motion.h1
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -33,12 +42,18 @@ const Hero = () => {
           className="justify-center border border-solid px-6 py-3 max-md:px-5"
           variant="solid"
           color="primary"
+          onClick={() => {
+            handleLinkClick("#contact");
+          }}
         >
           Get Started
         </Button>
         <Button
           className="justify-center border border-solid px-6 py-3 max-md:px-5"
           variant="bordered"
+          onClick={() => {
+            handleLinkClick("#problem");
+          }}
         >
           Learn More
         </Button>

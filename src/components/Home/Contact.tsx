@@ -39,7 +39,10 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
 const Contact = () => {
   return (
     <>
-      <section className="flex flex-col items-center pb-16 max-md:flex-wrap md:px-16 md:py-16">
+      <section
+        id="contact"
+        className="flex flex-col items-center pb-16 max-md:flex-wrap md:px-16 md:py-16"
+      >
         <div className="w-full">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex w-[59%] flex-col max-md:ml-0 max-md:w-full">

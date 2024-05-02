@@ -2,10 +2,18 @@
 import { Button } from "@nextui-org/button";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import * as React from "react";
+import { useLenis } from "@studio-freight/react-lenis";
 
 const Faq = () => {
+  const lenis = useLenis();
+  const handleLinkClick = (link: string) => {
+    lenis?.scrollTo(link, { offset: -64 });
+  };
   return (
-    <section className="-mx-6 flex flex-col items-center justify-center rounded-md bg-background bg-opacity-10 bg-clip-padding px-6 py-16 backdrop-blur-xl backdrop-filter md:mx-0 md:px-16">
+    <section
+      id="faq"
+      className="-mx-6 flex flex-col items-center justify-center rounded-md bg-background bg-opacity-10 bg-clip-padding px-6 py-16 backdrop-blur-xl backdrop-filter md:mx-0 md:px-16"
+    >
       <h1 className="gap-0 text-center text-2xl font-bold leading-[57.6px] max-md:max-w-full max-md:flex-wrap md:text-4xl">
         FAQs
       </h1>
@@ -35,7 +43,13 @@ const Faq = () => {
         Contact us for more information.
       </p>
       <div className="flex items-start gap-4 whitespace-nowrap pt-6 text-base leading-6">
-        <Button color="primary" variant="faded">
+        <Button
+          color="primary"
+          variant="faded"
+          onClick={() => {
+            handleLinkClick("#contact");
+          }}
+        >
           Contact Us
         </Button>
       </div>
